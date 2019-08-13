@@ -14,22 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true
       }
     },
-    
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8]
-      }
-    },
-    password_salt: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    password_hash_algorithm: {
-      type: DataTypes.STRING,
-      allowNull: false
-  }
+
   });
 
   //   Sets up foreign keys on Userid with other models and deletes if User is deleted
