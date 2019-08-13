@@ -22,20 +22,16 @@ module.exports = function (sequelize, DataTypes) {
     },
     tripNotes: {
       type: DataTypes.STRING
-    },
-    userId: {
-      type: DataTypes.STRING,
-      allowNull: false
     }
 
   });
 
   Trip.associate = function (models) {
-    // Trip.belongsTo(models.User, {
-    //   foreignKey: {
-    //     allowNull: false
-    //   }
-    // });
+    Trip.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
     Trip.hasMany(models.Flight, {
       onDelete: 'cascade'
     });
