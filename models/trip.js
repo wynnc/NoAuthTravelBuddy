@@ -27,11 +27,11 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Trip.associate = function (models) {
-    Trip.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    // Trip.belongsTo(models.User, {
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
     Trip.hasMany(models.Flight, {
       onDelete: 'cascade'
     });

@@ -10,9 +10,10 @@ block content
         .span Great tool for using on the road
         .span Fun and easy to use
     .w3-panel.w3-left.welcomeTextBar
-      if locals.user
-        .w3-card-4.w3-light-grey
-          h1.w3-large.w3-serif.welcomeText Welcome #{user.nickname}
-      else
-          h4.w3-large.w3-serif.welcomeText Keep all of your travel information in one place! Please #[a(href="/login") Log In/Sign Up] to continue.
+      //if locals.user
+      .w3-card-4.w3-light-grey
+        h1.w3-large.w3-serif.welcomeText Welcome
+          //-  #{user.nickname}
+      //- else
+      //-     h4.w3-large.w3-serif.welcomeText Keep all of your travel information in one place! Please #[a(href="/login") Log In/Sign Up] to continue.
   
