@@ -3,7 +3,7 @@ const tripRoutes = require('./trips');
 const flightRoutes = require('./flights.js');
 const lodgingRoutes = require('./lodgings');
 const transportRoutes = require('./transports');
-const userRoutes = require('./users');
+// const userRoutes = require('./users');
 
 // Trip routes
 router.use('/trips', tripRoutes);
@@ -18,6 +18,6 @@ router.use('/lodgings', lodgingRoutes);
 router.use('/transports', transportRoutes);
 
 // User routes
-router.use('/users', userRoutes);
+// router.use('/users', userRoutes);
 
 module.exports = router;

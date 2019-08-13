@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
 //   var selectedTrip;
-  $(document).on('click', '#tripForm', handleTripFormSubmit);
+  // $(document).on('click', '#tripForm', handleTripFormSubmit);
 
   $('#tripDetails').on('click', handleAddDetailsForm);
 
@@ -14,22 +14,22 @@ $(document).ready(function () {
   //   handleUpdateTripForm(updateId);
   // });
 
-  function handleTripFormSubmit () {
-    $('#submit').on('click', function (event) {
-      event.preventDefault();
+  // function handleTripFormSubmit () {
+  //   $('#submit').on('click', function (event) {
+  //     event.preventDefault();
 
-      var newTrip = {
-        tripName: $('#firstName').val().trim(),
-        startDate: $('#startDate').val().trim(),
-        endDate: $('#endDate').val().trim(),
-        // userId: $('#user.id')
-      };
-      console.log(newTrip);
-      $.post('/api/trips', newTrip).then(function (res) {
-        console.log(res);
-      });
-    });
-  }
+  //     // var newTrip = {
+  //     //   tripName: $('#firstName').val().trim(),
+  //     //   startDate: $('#startDate').val().trim(),
+  //     //   endDate: $('#endDate').val().trim(),
+  //     //   // userId: $('#user.id')
+  //     // };
+  //     // console.log(newTrip);
+  //     // $.post('/api/trips', newTrip).then(function (res) {
+  //     //   // console.log(res);
+  //     // });
+  //   });
+  // }
 
   // create flight/lodging/transport
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
     var selectedTrip = $('.tripName').val();
 
     selectedTrip = parseInt(selectedTrip);
-
+    
     var newFlight = {
       airline: $('input[name=airline]').val(),
       flightConNum: $('input[name=flightConNum]').val(),
@@ -84,8 +84,10 @@ $(document).ready(function () {
 
     // console.log(newTrans);
     $.post('/api/transports', newTrans).then(function (response) {
-      console.log(response);
+      console.log('you are back to the front end' + response);
     });
+
+    window.location.href = "/allTrips"
     // console.log(newFlight);
   };
 });

@@ -18,13 +18,13 @@ module.exports = {
   create: function (req, res) {
     db.Lodging
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.json(dbModel).redirect('/allTrips'))
       .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {
     db.Lodging
       .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.json(dbModel).redirect('/allTrips'))
       .catch(err => res.status(422).json(err));
   },
   remove: function (req, res) {
