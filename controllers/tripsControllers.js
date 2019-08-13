@@ -16,8 +16,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log('This is the user: ', req.user);
-    req.body.userId = req.user.id;
+    // console.log('This is the user: ', req.user);
+    // req.body.userId = req.user.id;
     console.log('This is the body: ', req.body);
     db.Trip
       .create(req.body)
