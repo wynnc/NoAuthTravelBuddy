@@ -7,26 +7,29 @@ module.exports = function (sequelize, DataTypes) {
         len: [1, 140]
       }
     },
-    id: {
-      type: DataTypes.STRING,
-      primaryKey: true,
-      allowNull: false
-    },
-    // grabbing this from the user login req.user.user_id unique to each user
-    userId: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 140]
-      }
-    },
-    // grabbing this either from req.user.emails.value or if they input a new one
+
     email: {
       type: DataTypes.STRING,
       validate: {
         isEmail: true
       }
-    }
+    },
+    
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8]
+      }
+    },
+    password_salt: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    password_hash_algorithm: {
+      type: DataTypes.STRING,
+      allowNull: false
+  }
   });
 
   //   Sets up foreign keys on Userid with other models and deletes if User is deleted
