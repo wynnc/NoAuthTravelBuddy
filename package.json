@@ -24,6 +24,6 @@
     "pug": "^2.0.4",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.22.9",
-    "sequelize": "^5.13.1"
+    "sequelize": "^5.15.1"
   }
 }
